@@ -10,6 +10,22 @@
         );
         register_post_type( 'section', $args );
 
+        //--- Custom Section Taxonomy ---//
+        $args = array(
+            'label'        => 'Type',
+            'public'       => true,
+            'hierarchical' => true,
+            'show_in_nav_menus' => true,
+        );
+        register_taxonomy( 'type', 'section', $args );
+
+        //--- Register Experience ---//
+        $args = array(
+            'public'    => true,
+            'label'     => 'Experience',
+        );
+        register_post_type( 'experience', $args );
+
     }
     add_action( 'init', 'register_resource' );
 

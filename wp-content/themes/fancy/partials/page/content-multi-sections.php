@@ -14,7 +14,33 @@
     // The Loop
     while ( $the_query->have_posts() ) {
         $the_query->the_post();
-        get_template_part('partials/section/content', 'default');
+
+        $suffix = 'default';
+
+        $types = get_the_terms(get_the_ID(), 'type');
+
+        if($types != false){
+
+            $type = $types[0];
+            $slug = $type->slug;
+
+            if(locate_template('partials/section/content-type-' . $slug . '.php')){
+
+                $suffix = 'type-' . $slug;
+
+            }
+
+        }
+
+        //-- Check section by section-slug --//
+        $section_slug = get_post_field('post_name');
+
+        if(locate_template('partials/section/content-' . $section_slug . '.php')){
+            $suffix = $section_slug;
+        }
+
+        get_template_part('partials/section/content', $suffix);
+
     }
 
     /* Restore original Post Data */
