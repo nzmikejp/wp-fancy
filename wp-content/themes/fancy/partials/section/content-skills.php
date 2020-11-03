@@ -1,12 +1,10 @@
-<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
-    <div class="my-auto">
-        <h2 class="mb-5"><?php the_title()?></h2>
-        <div><?php the_content()?></div>
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
+        <div class="my-auto">
+          <h2 class="mb-5"><?php the_title()?></h2>
+          <div><?php the_content()?></div>
 
-        <div class="subheading mb-3">
-            Programming Languages &amp; Tools
-        </div>
-        <ul class="list-inline dev-icons">
+          <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+          <ul class="list-inline dev-icons">
             <li class="list-inline-item">
               <i class="fab fa-html5"></i>
             </li>
@@ -43,8 +41,8 @@
             <li class="list-inline-item">
               <i class="fab fa-npm"></i>
             </li>
-        </ul>
-    </div>
-</section>
+          </ul>
+        </div>
+    </section>
 
-<hr class="m-0">
+    <hr class="m-0">
