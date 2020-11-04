@@ -1,5 +1,25 @@
 <?php
 
+function enqueue_function() {
+
+    //--- CSS ---//
+    wp_enqueue_style ( 'bootstrap', get_template_directory_uri().'/vendor/bootstrap/css/bootstrap.min.css' );
+    wp_enqueue_style ( 'font1','https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700' );
+    wp_enqueue_style ( 'font2','https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i' );
+    wp_enqueue_style ( 'fontawesome', get_template_directory_uri().'/vendor/fontawesome-free/css/all.min.css' );
+    wp_enqueue_style ( 'resume', get_template_directory_uri().'/css/resume.min.css' );
+    wp_enqueue_style ( 'my-style', get_stylesheet_uri() );
+
+    //--- JS ---//
+    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri().'/vendor/bootstrap/js/bootstrap.bundle.min.js', array('jquery'), '1.0.0', true );
+    wp_enqueue_script( 'jquery-easing', get_template_directory_uri().'/vendor/jquery-easing/jquery.easing.min.js', array('jquery'), '1.0.0', true );
+    wp_enqueue_script( 'resume-js', get_template_directory_uri().'/js/resume.min.js', array('jquery'), '1.0.0', true );
+    wp_enqueue_script( 'my-script', get_template_directory_uri().'/js/my-script.js', array('jquery'), '1.0.0', true );
+
+}
+add_action('wp_enqueue_scripts', 'enqueue_function');
+
+
 function register_resources(){
 	//register a menu
     register_nav_menu('main-menu','Main Menu');
@@ -110,5 +130,8 @@ function section_func( $atts ){
     return ob_get_clean();
 }
 add_shortcode( 'section', 'section_func' );
+
+
+
 
 ?>

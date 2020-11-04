@@ -9,17 +9,7 @@
     <meta name="author" content="">
 
     <title>Resume - Start Bootstrap Theme</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="<?php echo get_template_directory_uri()?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
-    <link href="<?php echo get_template_directory_uri()?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="<?php echo get_template_directory_uri()?>/css/resume.min.css" rel="stylesheet">
+    
     <?php wp_head()?>
   </head>
 
@@ -36,26 +26,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
-          </li>
-        </ul> -->
+
         <?php wp_nav_menu(array( 
           	'theme_location' => 'main-menu',
           	'container' => 'ul',
@@ -63,4 +34,10 @@
         )); ?>
      
       </div>
+      <form>
+        <div class="form-group" method="get" action="<?php echo get_site_url('/')?>">
+          <input type="text" name="s" class="form-control" id="keywords" placeholder="Enter keywords">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
     </nav>
