@@ -19,6 +19,12 @@ function enqueue_function() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_function');
 
+//--- Admin Enqueue ---//
+function admin_enqueue_function() {
+    wp_enqueue_style ( 'font1','https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700' );
+}
+add_action( 'admin_enqueue_scripts', 'admin_enqueue_function' );
+
 
 function register_resources(){
 	//register a menu
@@ -43,7 +49,8 @@ function register_resources(){
     //register experience
     $args = array(
         'public' => true,
-        'label'  => 'Experience'
+        'label'  => 'Experience',
+        'show_in_rest' => true,
     );
     register_post_type( 'experience', $args );
 
